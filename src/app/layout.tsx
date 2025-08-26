@@ -50,7 +50,6 @@ export default function RootLayout({
         >
           <Navbar />
           {children}
-          <Button className="cursor-pointer">Button</Button>
         </ThemeProvider>
       </body>
     </html>

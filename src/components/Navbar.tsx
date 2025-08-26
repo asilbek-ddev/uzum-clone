@@ -7,7 +7,7 @@ const Navbar = () => {
                 <div>
                     <picture>
                         <source />
-                        <img src={""} alt={"Предложение от Olcha"} />
+                        {/* <img src={""} alt={"Предложение от Olcha"} /> */}
                     </picture>
                 </div>
             </a>
