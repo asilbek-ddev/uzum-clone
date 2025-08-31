@@ -1,24 +1,38 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-import {
-  Navbar
-} from "@/components/importData";
-import { Button } from "@/components/ui/button";
-import { ThemeProvider } from "@/components/theme-provider";
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
+import Navbar from "@/components/layout/header/Navbar";
+import Footer from "@/components/layout/footer/footer";
 
 export const metadata: Metadata = {
   title: {
-    default: "Uzum online do'koni clone",
-    template: "%s | Uzum online do'kon clone",
+    default: "Uzum online do'koni - Barcha mahsulotlar bir joyda",
+    template: "%s | Uzum Market"
   },
-  description: "Eng zo‘r online do‘kon. Mahsulotlaringiz shu yerda!",
-  keywords: ["uzum market", "uzum", "dokon", "ecommerce", "e-commerce", "dukon", "online shop", "online", "shop", "uz", "mahsulot"],
+
+  description: "O'zbekistondagi eng yirik online do'kon. Eng arzon narxlarda turli xil mahsulotlarni toping. Maishiy texnika, kiyim-kechak, elektronika va boshqalar.",
+
+  openGraph: {
+    title: "Uzum online do'koni - Barcha mahsulotlar bir joyda",
+    description: "O'zbekistondagi eng yirik online do'kon. Eng arzon narxlarda turli xil mahsulotlarni toping.",
+    url: "https://sizning-saytingiz.uz", // O'z saytingiz manzilini qo'ying
+    type: "website",
+    locale: "uz_UZ",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        alt: "Uzum online do'koni"
+      }
+    ]
+  },
+
+  // Twitter (X) uchun alohida sozlamalar
+  twitter: {
+    card: "summary_large_image",
+    title: "Uzum online do'koni - Barcha mahsulotlar bir joyda",
+    description: "O'zbekistondagi eng yirik online do'kon. Eng arzon narxlarda turli xil mahsulotlarni toping.",
+    images: ["/images/twitter-image.jpg"],
+  },
+
   authors: [{ name: "Asilbek Developer" }],
   creator: "Asilbek Dev",
 };
@@ -28,29 +42,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  console.log(`
-      ███╗   ██╗███████╗██╗    ██║ ████████╗
-      ████╗  ██║██╔════╝ ██║  ██║  ╚═╗██╔══╝
-      ██╔██╗ ██║█████╗    █████║     ║██║   
-      ██║╚██╗██║██╔══╝   ██╔══██║    ║██║   
-      ██║ ╚████║███████╗██║    ██║   ║██║   
-      ╚═╝  ╚═══╝╚══════╝╚═╝    ╚═╝   ╚══╝   
-  `);
-
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${inter.variable}`}
-      >
-        <ThemeProvider
-          attribute={"class"}
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Navbar />
-          {children}
-        </ThemeProvider>
+    <html lang="uz" suppressHydrationWarning>
+      <body>
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
