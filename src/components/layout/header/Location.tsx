@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import { ChevronDown, ChevronRight, MapPin, Search } from 'lucide-react'
 import { Dialog, DialogContent, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
@@ -6,6 +8,9 @@ import city from "@/data/cityData"
 import { Separator } from '@/components/ui/separator'
 
 const Location = () => {
+    const [query, setQuery] = React.useState<string>("")
+    const filtered = city.filter(p => p.name.toLocaleLowerCase().includes(query.toLocaleLowerCase()))
+
     return (
         <Dialog>
             <DialogTrigger
@@ -14,14 +19,20 @@ const Location = () => {
                 Toshkent
                 <ChevronDown strokeWidth={1.25} className='size-6' />
             </DialogTrigger>
-            <DialogContent className='h-[580px] overflow-hidden'>
+            <DialogContent className='h-[580px] overflow-hidden flex flex-col'>
                 <DialogTitle>Shaharni tanlang</DialogTitle>
                 <div className='relative flex items-center mt-2.5'>
                     <Search className='ml-2 text-gray-400' />
-                    <Input className='absolute h-11 pl-10 border-gray-300' />
+                    <Input
+                        className='absolute h-11 pl-10 border-gray-300'
+                        type='text'
+                        placeholder='Shaharni tanlang...'
+                        value={query}
+                        onChange={(e) => setQuery(e.target.value)}
+                    />
                 </div>
                 <div className='flex flex-col mt-1 overflow-y-scroll'>
-                    {city.map(item => (
+                    {filtered.map(item => (
                         <div key={item.name}>
                             <div
                                 className='flex items-center justify-between w-full p-2.5 hover:bg-gray-100 cursor-pointer'
