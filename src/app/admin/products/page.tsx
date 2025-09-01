@@ -1,25 +1,11 @@
-// src/app/admin/products/page.tsx
+import React from 'react'
 
-import Link from 'next/link';
-
-const products = [
-    { id: '1', name: 'Olma' },
-    { id: '2', name: 'Banan' },
-    { id: '3', name: 'Anor' },
-];
-
-export default function ProductsPage() {
+const page = () => {
     return (
-        <>
-            <h1>Mahsulotlar</h1>
-            <Link href="/admin/products/new">Yangi mahsulot qo‘shish</Link>
-            <ul>
-                {products.map((product) => (
-                    <li key={product.id}>
-                        <Link href={`/admin/products/${product.id}`}>{product.name}</Link>
-                    </li>
-                ))}
-            </ul>
-        </>
-    );
+        <div>
+
+        </div>
+    )
 }
+
+export default page

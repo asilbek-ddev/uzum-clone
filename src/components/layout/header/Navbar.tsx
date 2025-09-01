@@ -22,7 +22,7 @@ const Navbar = () => {
                                 href={"https://seller.uzum.uz/"}
                                 className='flex items-center gap-2.5 text-[15px] text-blue-500'
                             >
-                                Sotuvchi bo'lish
+                                Sotuvchi bo&#39;lish
                                 <span className='border h-5 border-blue-400' />
                             </a>
                             <a

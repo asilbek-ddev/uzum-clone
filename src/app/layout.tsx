@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Uzum online do'koni - Barcha mahsulotlar bir joyda",
     description: "O'zbekistondagi eng yirik online do'kon. Eng arzon narxlarda turli xil mahsulotlarni toping.",
-    url: "https://uzum-market-online.vercel.app/",
+    url: "https://uzum-market-online.vercel.app",
     type: "website",
     locale: "uz_UZ",
     images: [
@@ -26,7 +26,6 @@ export const metadata: Metadata = {
     ]
   },
 
-  // Twitter (X) uchun alohida sozlamalar
   twitter: {
     card: "summary_large_image",
     title: "Uzum online do'koni - Barcha mahsulotlar bir joyda",

@@ -5,7 +5,7 @@ const page = () => {
         <div className='containers'>
             <div className='flex gap-5 w-full min-h-screen'>
                 <aside className='flex flex-col w-1/6'>
-
+        
                 </aside>
                 <div>
 
