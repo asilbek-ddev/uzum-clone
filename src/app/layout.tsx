@@ -5,6 +5,8 @@ import Footer from "@/components/layout/footer/footer";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://uzum-market-online.vercel.app"),
+
   title: {
     default: "Uzum online do'koni - Barcha mahsulotlar bir joyda",
     template: "%s | Uzum Market"
