@@ -5,7 +5,7 @@
 
 @layer components {
   .containers {
-    @apply max-w-7xl mx-auto px-2.5 xl:px-0
+    @apply max-w-[1300px] mx-auto px-2.5 lg:px-5
   }
 }
 
