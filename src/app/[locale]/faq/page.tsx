@@ -322,7 +322,7 @@ const page = () => {
                     <h2 className='text-2xl font-semibold text-center'>«Arzon narxlar kafolati» aksiyasi</h2>
                     <h3 className='text-lg font-semibold'>Arzon narxlar kafolati bu nima?</h3>
                     <p>Arzon narxlar kafolati - bu Uzum Marketdagi mahsulotni boshqa internet-do‘konlarida arzonroq narxda ko‘rsangiz, sizga promokod shaklida kompensatsiya olish imkonini beruvchi aksiya. Aksiyada ishtirok etuvchi internet-do‘konlar ro‘yxati bilan «Aksiyada ishtirok etayotgan internet-do‘konlar ro‘yxati» bo’limida tanishish mumkin.</p>
-                    <p>Aksiya bo'yicha yuridik oferta: <a href="https://legal.uzum.uz/Low-Price-Guarantee-uz.html" className='hover:text-blue-500 transition-all underline'><b>https://legal.uzum.uz/Low-Price-Guarantee-uz.html</b></a></p>
+                    <p>Aksiya bo&#39;yicha yuridik oferta: <a href="https://legal.uzum.uz/Low-Price-Guarantee-uz.html" className='hover:text-blue-500 transition-all underline'><b>https://legal.uzum.uz/Low-Price-Guarantee-uz.html</b></a></p>
                     <h3 className='text-lg font-semibold'>Aksiyada qanday ishtirok etish mumkin?</h3>
                     <ol className='list-decimal pl-5'>
                         <li>Uzum Marketdan <b>«Arzon narx kafolati»</b> belgisi bo’lgan mahsulotni xarid qiling.</li>

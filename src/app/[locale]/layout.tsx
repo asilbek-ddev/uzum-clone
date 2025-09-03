@@ -5,6 +5,9 @@ import "./globals.css";
 import Navbar from "@/components/layout/header/Navbar";
 import Footer from "@/components/layout/footer/footer";
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { NextIntlClientProvider, hasLocale } from "next-intl"
+import { routing } from "../../../i18n/routing";
+import { notFound } from "next/navigation";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -43,18 +46,28 @@ export const metadata: Metadata = {
   creator: "Asilbek Dev",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }>) {
+  const { locale } = await params;
+
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+
   return (
     <html lang="uz" suppressHydrationWarning>
       <body className={inter.className}>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
-        <SpeedInsights />
+        <NextIntlClientProvider>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+          <SpeedInsights />
+        </NextIntlClientProvider>
       </body>
     </html>
   );

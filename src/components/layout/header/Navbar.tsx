@@ -1,9 +1,15 @@
+'use client'
+
 import React from 'react'
 import Link from 'next/link'
 import Location from './Location'
-import { LanguageSelector } from './TranslateDrobdown'
+import { usePathname } from 'next/navigation'
 
 const Navbar = () => {
+    const pathName = usePathname()
+
+    const currentLocale = pathName.split('/')[1]
+
     return (
         <header>
             <div className='bg-gray-200'>
@@ -33,7 +39,7 @@ const Navbar = () => {
                                 Topshirish punktini ochish
                             </a>
                             <Link
-                                href={"/faq"}
+                                href={`${currentLocale}/faq`}
                                 className='text-[15px]'
                             >
                                 Savol-javob
@@ -44,7 +50,6 @@ const Navbar = () => {
                                 Buyurtmalarim
                             </span>
                         </div>
-                        <LanguageSelector />
                     </div>
                 </div>
             </div>
