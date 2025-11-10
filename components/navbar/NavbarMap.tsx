@@ -11,12 +11,12 @@ const NavbarMap = () => {
                     <Button
                         variant={"outline"}
                         className="flex items-center justify-center gap-x-0.5 bg-transparent border-transparent shadow-none hover:bg-transparent p-0! cursor-pointer">
-                        <MapIcon className="size-6" />
-                        <span className="">Toshkent</span>
-              <ChevronDownIcon className="size-6" />
+                        <MapIcon className="size-5" />
+                        <span className="font-medium">Toshkent</span>
+              <ChevronDownIcon className="size-5" />
                     </Button>
                 </DialogTrigger>
-                <DialogContent>
+        <DialogContent>
                     <DialogHeader>
                         <DialogTitle className="flex flex-col gap-5">
                             <span className="text-[20px]">Shaharni tanlang</span>
