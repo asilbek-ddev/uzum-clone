@@ -5,19 +5,18 @@ import NavbarMap from "./NavbarMap"
 import NavbarLanguage from "./NavbarLanguage"
 import Image from "next/image"
 import uzum_home from "../icons/uzum-home.svg"
-import { CartIcon, UserIcon, WishesIcon } from "../icons/icons"
 import NavbarCatalog from "./NavbarCatalog"
 
 const list = [
   {
     id: "a-78v44r5e-g4rth2",
     name: "Saralangan",
-    icon: WishesIcon,
+    icon: "", // Svg quyiladi
     href: "/wishes",
   }, {
     id: "d-78v44r5e-g4rth3",
     name: "Savat",
-    icon: CartIcon,
+    icon: "", // Svg quyiladi
     href: "/cart",
   },
 ]
@@ -52,12 +51,11 @@ const Navbar = () => {
         <ul className="flex items-center gap-5">
           <li></li>
           {list.map(item => {
-            const Icon = item.icon;
             const { id, name, href } = item
             return (
               <li key={id}>
                 <Link href={href} className="flex items-center gap-2.5">
-                  <span><Icon /></span>
+                  {/* <span><Icon /></span> */}
                   {name}
                 </Link>
               </li>
