@@ -3,43 +3,93 @@ interface ProductAttribute {
   value: string;
 }
 
+interface ProductCategoryProps {
+  id: number;
+  slug: string;
+  name: string;
+}
+
 export interface Product {
   id: number;
+  slug: string;
   name: string;
-  brand: string;
-  category: string;
   price: number;
-  sale_price: number | null;
+  discountPrice: number;
+  discountPriceUzumCard: number;
+  discountPercentage: number;
   currency: string;
-  in_stock: boolean;
+  monthlyPayment: number;
+  installmentPeriod: number;
+  isOriginal: boolean;
+  hasArzonNarxKafolati: boolean;
+  hasUzumKartaOffer: boolean;
+  hasInstallment: boolean;
   rating: number;
-  reviews_count: number;
-  image_link: string;
-  attributes: ProductAttribute[];
-  is_installments_available: boolean;
-  is_original: boolean;
-  is_best_price_guaranteed: boolean;
+  reviewCount: number;
+  inStock: boolean;
+  stockQuantity: number;
+  soldCount: number;
+  description: string;
+  shortDescription: string;
+  images: string[];
+  specifications: any; // ! ANY type berilgan
+  category: ProductCategoryProps;
+  seller: any; // ! ANY type berilgan
+  shipping: any; // ! ANY type berilgan
 }
 
 export const productData: Product[] = [
   {
-    id: 1,
-    name: "Product 1",
-    brand: "SvetoCopy",
-    category: "Kanselyariya mollari",
-    price: 10.5,
-    sale_price: 9.0,
+    id: 56789,
+    slug: "400-ml-premium-dezodorant-sprey-original",
+    name: "400 ML Premium Dezodorant Sprey (ORIGINAL)",
+    price: 29191,
+    discountPrice: 57990,
+    discountPriceUzumCard: 25191,
+    discountPercentage: 30,
     currency: "UZS",
-    in_stock: true,
-    rating: 4.5,
-    reviews_count: 150,
-    image_link: "/images/product1.jpg",
-    attributes: [
-      { name: "Color", value: "White" },
-      { name: "Size", value: "A4" },
+    monthlyPayment: 1982,
+    installmentPeriod: 12,
+    isOriginal: true,
+    hasArzonNarxKafolati: true,
+    hasUzumKartaOffer: true,
+    hasInstallment: true,
+    rating: 4.7,
+    reviewCount: 1245,
+    inStock: true,
+    stockQuantity: 456,
+    soldCount: 3789,
+    description:
+      "Yuqori sifatli 400 ml hajmdagi dezodorant sprey. 72 soatgacha himoya, yoqimli hid, ORIGINAL sifat kafolati bilan. Butun oila uchun mos, terini quritmaydi va alerjiya keltirib chiqarmaydi.",
+    shortDescription:
+      "400 ml ORIGINAL dezodorant — 72 soat himoya, arzon narx kafolati bilan!",
+    images: [
+      "https://images.unsplash.com/photo-1625772299848-361b803ffa25?w=800&q=80",
+      "https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?w=800&q=80",
+      "https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=800&q=80",
     ],
-    is_installments_available: true,
-    is_original: true,
-    is_best_price_guaranteed: true,
+    specifications: {
+      hajmi: "400 ml",
+      turi: "Sprey dezodorant",
+      himoya_muddati: "72 soat",
+      hid: "Fresh / Sport",
+      ishlab_chiqarilgan: "Yevropa / Original brend",
+    },
+    category: {
+      id: 123,
+      name: "Go'zallik va parvarish",
+      slug: "gozallik-parvarish",
+    },
+    seller: {
+      id: 999,
+      name: "Premium Brand Uzum",
+      rating: 4.8,
+      verified: true,
+    },
+    shipping: {
+      free: true,
+      estimatedDays: "1-2 kun",
+      cost: 0,
+    },
   },
 ];
