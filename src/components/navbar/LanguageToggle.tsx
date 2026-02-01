@@ -1,8 +1,8 @@
 const LanguageToggle = () => {
     return (
-        <div>
-            
-        </div>
+        <>
+
+        </>
     )
 }
 
