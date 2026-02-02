@@ -2,14 +2,12 @@ import { NextRequest, NextResponse } from "next/server";
 import catalog from "@/data/catalog.json";
 import { rateLimit } from "@/lib/rate-limit";
 
-export const revalidate = 60 * 60 * 24;
-
 const ALLOWED_ORIGINS = [
   "http://localhost:3000",
   "https://uzum-clone-uz.vercel.app",
 ];
 
-export async function GET(req: NextRequest, context: { params: {} }) {
+export async function GET(req: NextRequest) {
   const origin = req.headers.get("origin");
   const ip = req.headers.get("x-forwarded-for")?.split(",")[0] || "unknown";
 
@@ -33,6 +31,7 @@ export async function GET(req: NextRequest, context: { params: {} }) {
       },
     );
   }
+  
   return NextResponse.json({
     success: true,
     data: catalog,
