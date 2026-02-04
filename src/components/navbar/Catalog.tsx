@@ -7,7 +7,6 @@ import { ChevronRight, GalleryVerticalEnd, X } from "lucide-react";
 import { getCatalog } from "@/services/catalog.service";
 import { CatalogProps } from "@/types/catalog.type";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function Catalog() {
     const [open, setOpen] = useState(false);
